@@ -1,0 +1,46 @@
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 528px;
+	height: 581px;
+	padding: 40px;
+	border-radius: 4px;
+	box-shadow: var(--modal-shadow);
+	transform: translate(-50%, -50%) scale(1);
+	transition: transform var(--transition-duration) var(--transition-timing-function), box-shadow var(--transition-duration) var(--transition-timing-function);
+
+	background-color: var(--primary-bgd-color);
+
+	.backdrop.is-hidden & {
+			transform: translate(-50%, -50%) scale(0.5);
+		}
+}
+
+.modal__btn-close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	border: 0;
+	cursor: pointer;
+	background-color: #fff;
+}
+
+.modal__icon-close {
+	fill: currentColor;
+	transition: fill var(--transition-duration) var(--transition-timing-function);
+
+	.modal__btn-close:hover &,
+	.modal__btn-close:focus & {
+			fill: var(--accent-color);
+		}
+}
+
+.modal__text {
+	margin-bottom: 12px;
+
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+}
